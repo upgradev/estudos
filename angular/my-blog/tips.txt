@@ -1,0 +1,49 @@
+/////////// link github
+https://github.com/PacktPublishing/Angular-Projects-Second-Edition
+
+//////////// bootstrap css
+npm install bootstrap
+and import at the top of styles.scss
+@import "~bootstrap/scss/bootstrap"
+
+//////////// gerar module core para os headers
+ng generate module core
+
+//////////// criar o component
+ng generate component header --path=src/app/core --module=core --export
+
+////////////  criar o header em modulo separado
+ng generate module shared
+ng generate component footer --path=src/app/shared --module=shared --export
+
+/////////// criar cada pagina com seu module
+ng generate module contact
+--flat não criar diretorio separado
+ng generate component contact --path=src/app/contact --module=contact --export --flat
+--route cria o arquivo de rotas do article e module inseri no route-app o arquivo
+ng generate module articles --route=articles --module=app-routing
+
+///////////  adicionar ao arquivo app-routing, no final
+caminho padrao para a tela inicial
+{ path: '', pathMatch: 'full', redirectTo: 'articles' },
+caso encontre uma url que não existe
+{ path: '**', redirectTo: 'articles' },
+
+//////////// instalar scully
+ng add @scullyio/init
+
+/////////// iniciar o blog
+ng generate @scullyio/init:markdown
+depois ir no arquivo scully.my-blog.config e alterar conforme esta ja no arquivo
+ir no article.component.ts  e incluir os scully
+ir no article.component.hmtl
+rodar o comando -> ng build
+e rodar o comando -> npm run scully -> para dar o build do scully
+run -> npm run scully:serve -> to serve our blog
+buscar porta caso estiver ocupada: lsof -i tcp:1668
+matar o processo que esta ocupando porta: kill -9 ID
+acessar a url : "http://localhost:1668/"
+npm run scully : para regenerar as rotas da aplicação
+2021-09-21-posts e depois rodar o : npm run scully e depois npm run scully:serve
+
+create one blog: ng generate @scullyio/init:post --name="Angular and Scully"

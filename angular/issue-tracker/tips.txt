@@ -1,0 +1,26 @@
+///// creating new project with css default and without routing
+ng new issue-tracker --defaults
+
+///// install clarity library
+ng add @clr/angular
+
+///// generate service
+ng generate service issues
+
+///// generate interface
+ng generate interface issue
+
+///// generate component list
+ng generate component issue-list
+
+///// insert app.module the ReactiveFormsModule
+
+///// generate issue-report
+ng generate component issue-report
+
+///// include @Output in issue report
+
+///// create a angular component dialog
+ng generate component confirm-dialog
+
+///// parei na pagina 83

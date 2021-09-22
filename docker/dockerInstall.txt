@@ -1,0 +1,38 @@
+
+-----------Install docker 
+sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update 
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo systemctl enable docker && systemctl start docker
+
+-----------user group
+sudo groupadd docker 
+sudo usermod -aG docker $USER
+
+----------- run first test docker
+docker run hello-world
+
+---------- NGINX web server 
+docker run bitnami/nginx:latest -> run foreground
+docker run -d bitnami/nginx:latest -> run background
+docker run --name nginx-test -d bitnami/nginx:latest -> include name that your want
+
+
+----------- commands commom
+docker help -> help system docker
+docker ps -> list dockers installed
+docker ps -a -> list all dockers installed
+docker start container_name_id -> If you need to start that container at a future time for additional testing or development
+docker attach container_name_id -> You may need to access a container interactively to troubleshoot an issue or to look at a log file.
+docker exec -it name_id bash -> A better option when it comes to interacting with a running container
+docker logs name_id -> logs
+docker volume <options>
+docker volume create <optional volume name> -> create volume
+docker volume ls -> list all volume
+docker run --name mysql-01 -v pv-mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-password -d mysql -> mounted volume
+docker run --name mysql-01 -v pv-mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-password -d mysql:v2 -> mounted volume existent
+docker run --name webserver01 -v webdata:/opt/web/data -d bitnami/nginx:latest docker run --name webserver02 -v webdata:/opt/web/data -d bitnami/nginx:latest docker run --name webserver03 -v webdata:/opt/web/data -d bitnami/nginx:latest docker run --name webserver04 -v webdata:/opt/web/data -d bitnami/nginx:latest -> mounted multiple volume container
+docker volume list -> Listing Docker volumes
+docker rm -v mysql -> cleaning up volume

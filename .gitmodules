@@ -1,0 +1,3 @@
+[submodule "angular/my-angular"]
+	path = angular/my-angular
+	url = https://github.com/upgradev/estudos.git

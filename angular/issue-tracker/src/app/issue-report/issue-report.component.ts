@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Issue } from '../issue';
 import { IssuesService } from '../issues.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { IssuesService } from '../issues.service';
 export class IssueReportComponent implements OnInit {
   @Output() formClose = new EventEmitter();
 
+  suggestions: Issue[] = [];
   issueForm: FormGroup | undefined;
 
   constructor(
@@ -23,6 +25,9 @@ export class IssueReportComponent implements OnInit {
       description: [''],
       priority: ['', Validators.required],
       type: ['', Validators.required],
+    });
+    this.issueForm.controls.title.valueChanges.subscribe((title: string) => {
+      this.suggestions = this.issueService.getSuggestions(title);
     });
   }
 

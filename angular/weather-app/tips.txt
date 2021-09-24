@@ -1,0 +1,24 @@
+//////// install angular material
+ng add @angular/material --theme=indigo-pink --typography=true --animations=true
+
+//////// gerar interface
+ng generate interface weather
+
+//////// import httpclient para requisicao http no app.module
+
+//////// criar um novo serviço do angular
+ng generate service weather
+
+//////// gerar um componente do weather
+ng generate component weather
+
+//////// in app.module add material library
+MatIconModule,
+MatInputModule,
+MatCardModule
+
+//////// service angular worked
+ng add @angular/pwa
+
+//////// instalar http-server
+npm install -D http-server

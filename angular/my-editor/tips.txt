@@ -1,0 +1,16 @@
+///// biblioteca para o editor
+npm install ngx-wig
+
+///// component para hospedar o WYSIWYG
+ng generate component editor
+
+///// abrir o index.html e remover o base
+
+///// integrar o electron ao angular
+npm install -D electron
+
+///// instalar o webpack cli
+npm install -D webpack-cli
+
+///// instalar o ts-loader para carregar os arquivos ts
+npm install -D ts-loader

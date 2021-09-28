@@ -22,3 +22,17 @@ ng add @angular/pwa
 
 //////// instalar http-server
 npm install -D http-server
+
+
+//////// importar o matsnackbarmodule para notificar atualização de versão
+no app.module
+
+//////// no app.module.ts importar Oninit
+e tnm o matsnack e o swupdate
+
+//////// gerar component header
+ng generate component header
+
+//////// no app.module importar
+MatToolbarModule
+MatButtonModule

@@ -1,0 +1,22 @@
+exercicios: https://github.com/PacktPublishing/Web-Development-with-Django
+
+instalar o python3
+
+instalar o ambiente virtual
+pip install virtualenv
+
+depois ir no diretorio que deseja e criar o ambiente virtual
+python3 -m virtualenv nomedoambiente
+
+ativar o ambiente
+source nomedoambiente/bin/activate
+
+no ambiente instalar o django
+pip install django
+
+iniciar o django
+entrar no projeto, e com o ambiente env ativado rodar o comando:  
+python3 manage.py runserver 
+
+sair do env
+entrar na pasta do env que criou e digitar: deactivate

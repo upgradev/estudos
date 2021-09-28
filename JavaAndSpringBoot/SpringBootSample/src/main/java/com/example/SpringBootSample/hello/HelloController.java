@@ -10,29 +10,29 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HelloController {
 
-    @Autowired
-    private HelloService service;
+    // @Autowired
+    // private HelloService service;
 
-    @GetMapping("/hello")
-    public String getHello() {
-        return "hello";
-    }
+    // @GetMapping("/hello")
+    // public String getHello() {
+    //     return "hello";
+    // }
 
-    @PostMapping("/hello")
-    public String postRequest(@RequestParam("text1") String str, Model model) {
-        model.addAttribute("sample", str);
+    // @PostMapping("/hello")
+    // public String postRequest(@RequestParam("text1") String str, Model model) {
+    //     model.addAttribute("sample", str);
 
-        return "/hello/response";
-    }
+    //     return "/hello/response";
+    // }
 
-    @PostMapping("/hello/db")
-    public String postDbRequest(@RequestParam("text2") String id, Model model){
-        // search one
-        Employee employee = service.getEmployee(id);
+    // @PostMapping("/hello/db")
+    // public String postDbRequest(@RequestParam("text2") String id, Model model){
+    //     // search one
+    //     Employee employee = service.getEmployee(id);
 
-        // save search result to model
-        model.addAttribute("employee", employee);
+    //     // save search result to model
+    //     model.addAttribute("employee", employee);
 
-        return "hello/db";
-    }
+    //     return "hello/db";
+    // }
 }

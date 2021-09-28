@@ -4,9 +4,12 @@ import java.util.Locale;
 import java.util.Map;
 
 import com.example.SpringBootSample.application.service.UserApplicationService;
+import com.example.SpringBootSample.domain.service.UserService;
+import com.example.SpringBootSample.domain.user.model.MUser;
 import com.example.SpringBootSample.form.GroupOrder;
 import com.example.SpringBootSample.form.SignupForm;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +30,12 @@ public class SignupController {
     @Autowired
     private UserApplicationService userApplicationService;
 
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private ModelMapper modelMapper;
+
     // display the user signup screen
     @GetMapping("/signup")
     public String getSignup(Model model, Locale locale, @ModelAttribute SignupForm form) {
@@ -46,6 +55,12 @@ public class SignupController {
             return getSignup(model, locale, form);
         }
         log.info(form.toString());
+
+        // convert form to MUserClass
+        MUser user = modelMapper.map(form, MUser.class);
+
+        userService.signup(user);
+
         return "redirect:/login";
     }
 }

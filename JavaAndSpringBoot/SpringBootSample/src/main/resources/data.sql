@@ -1,17 +1,8 @@
 insert into employee (id, name, age) values ('1', 'Tom', 30)
 
 /* User master */
-INSERT INTO m_user (
-user_id
-, password
-, user_name
-, birthday
-, age
-, gender
-, department_id
-, role
-) VALUES
-('system@co.jp' , 'password' , 'System Administrator' , '2000-01-01' , 21, 1, 1, 'ROLE_ADMIN' )
+INSERT INTO m_user (user_id, password, user_name, birthday, age, gender, department_id, role) 
+VALUES ('system@co.jp' , 'password' , 'System Administrator' , '2000-01-01' , 21, 1, 1, 'ROLE_ADMIN' )
 , ('user@co.jp' , 'password' , 'User1' , '2000-01-01' , 21, 2, 2, 'ROLE_GENERAL' )
 ;
 /* Department master */

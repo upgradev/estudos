@@ -8,7 +8,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 // Para não validar o usuario e senha exclude = {SecurityAutoConfiguration.class}
-@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
+// @SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
+@SpringBootApplication()
 public class EncriptarSenhaDoUsuarioApplication {
 
 	public static void main(String[] args) {

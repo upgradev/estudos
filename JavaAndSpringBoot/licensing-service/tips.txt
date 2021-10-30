@@ -1,0 +1,14 @@
+http://localhost:8080/v1/organization/optimaGrowth/license post
+{
+    "licenseId": "0235431845",
+    "organizationId": "Optima Growth",
+    "description" : "Software Product",
+    "productName" : "Ostock",
+    "licenseType": "complete"
+}
+
+http://localhost:8080/v1/organization/optimaGrowth/license/0235431845 get
+
+http://localhost:8080/v1/organization/optimaGrowth/license put
+
+http://localhost:8080/v1/organization/optimaGrowth/license/0235431845 del

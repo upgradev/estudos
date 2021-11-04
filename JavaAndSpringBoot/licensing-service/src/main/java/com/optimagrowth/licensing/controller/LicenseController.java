@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
+
 
 @RestController
 @RequestMapping(value = "v1/organization/{organizationId}/license")
@@ -29,6 +31,17 @@ public class LicenseController {
             @PathVariable("licenseId") String licenseId) {
 
         License license = licenseService.getLicense(licenseId, organizationId);
+
+        license.add(
+                linkTo(methodOn(LicenseController.class).getLicense(organizationId, license.getLicenseId()))
+                        .withSelfRel(),
+                linkTo(methodOn(LicenseController.class).createLicense(organizationId, license, null))
+                        .withRel("createLicense"),
+                linkTo(methodOn(LicenseController.class).updateLicense(organizationId, license))
+                        .withRel("updateLicense"),
+                linkTo(methodOn(LicenseController.class).deleteLicense(organizationId, license.getLicenseId()))
+                        .withRel("deleteLicense"));
+
         return ResponseEntity.ok(license);
     }
 

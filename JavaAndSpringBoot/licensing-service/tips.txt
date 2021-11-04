@@ -12,3 +12,15 @@ http://localhost:8080/v1/organization/optimaGrowth/license/0235431845 get
 http://localhost:8080/v1/organization/optimaGrowth/license put
 
 http://localhost:8080/v1/organization/optimaGrowth/license/0235431845 del
+
+HATEOAS
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-hateoas</artifactId>
+</dependency>
+
+actuador for health application
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>

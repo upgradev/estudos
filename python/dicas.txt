@@ -1,0 +1,68 @@
+///// criar o ambiente virtual
+python3 -m venv venv
+
+///// entrar no modo ambiente de env
+source venv/bin/activate  -> rodar sempre que abriri o projeto
+
+///// instalar django
+pip install Django
+
+///// criar projeto django
+django-admin startproject project .
+
+///// criar o app
+python manage.py startapp app
+
+abrir o arquivo settings.py e adicionar o nome do app no INSTALLED_APPS
+abrir o arquivo urls e adicionar o app com as views e adicionar um caminho
+abrir o arquivo views e criar uma função que vai chamar a pagina que queira
+
+///// rodar sempre o projeto
+depois rodar o comando
+    python manage.py runserver
+
+
+///// templates
+criar pasta template dentro do app e incluir um arquivo index.html 
+
+///// models
+ir no arquivo models.py
+fazer a migration: python manage.py makemigrations
+criar banco de dados: python manage.py migrate
+
+
+
+///// formulario
+criar arquivo forms.py
+depois configurar na views
+inserir campos no form.html
+
+///para a lista na index
+ir na views e pegar todos os registro
+depois ir na index e fazer o laço de repetição com o dada, que vem da views
+
+///// mexer com javascript
+dentro do settings.py incluir no topo: import os
+antes do final incluir: BASE_DIR = os.path.join(BASE_DIR, "static")
+criar no app a pasta static e incluir o arquivo  javascript dentro
+
+
+///// paginação
+
+abrir o arquivo views e importar from django.core.paginator import Paginator
+
+///// trabalhar com postgresq
+pip install psycopg2
+pip install psycopg2-binary
+no settings adcionar
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydatabase',
+        'USER': 'mydatabaseuser',
+        'PASSWORD': 'mypassword',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
+depois rodar o comando python manage.py migrate

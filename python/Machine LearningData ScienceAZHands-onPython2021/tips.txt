@@ -3,3 +3,4 @@ pip install pandas
 pip install -U scikit_learn
 pip install scipy
 pip install matplotlib
+pip install seaborn

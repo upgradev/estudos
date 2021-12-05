@@ -1,0 +1,6 @@
+criar uma planilha no google planilha
+
+/////// instalar pacote para conectar na api
+pip install gspread
+depois ir no google console api criar um projeto
+depois ir na biblioteca e instalar o Google Sheets API

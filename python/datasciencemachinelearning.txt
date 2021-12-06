@@ -1,0 +1,20 @@
+pacotes
+pip3 install numpy
+pip3 install pandas
+
+
+Data Frame
+    matriz de dados multidimensional, conjunto de series ex(planilha)
+
+Series
+    retirados da matriz, é unidimensional
+
+
+Media: soma de objetos divido pelo total de objetos
+
+mediana: fica ao centro dos dados, divide o centro dos dados, quanto para menos quanto para mais
+
+moda: valor que mais aparece nos dados
+
+desvio padrão: é o quanto q cada um desses valores desvio da média, quanto mais proximo de zero mais uniforme os valores
+

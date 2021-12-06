@@ -1,0 +1,17 @@
+////// criar um ambiente de teste
+python3 -m virtualenv nomedoambiente
+
+////// ativar o env
+source /bin/activate
+
+////// instalar o django
+pip3 install django
+
+////// criar o projeto django
+django-admin.py startproject myproject .
+
+////// executar o projeto
+python3 manage.py runserver
+
+////// criar o app do projeto
+python3 manage.py startapp reviews

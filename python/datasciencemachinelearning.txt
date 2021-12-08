@@ -1,6 +1,9 @@
 pacotes
 pip3 install numpy
 pip3 install pandas
+pip3 install matplotlib
+pip3 install seaborn
+
 
 
 Data Frame
@@ -18,3 +21,11 @@ moda: valor que mais aparece nos dados
 
 desvio padrão: é o quanto q cada um desses valores desvio da média, quanto mais proximo de zero mais uniforme os valores
 
+manipulação bando de dados
+pip install sqlalchemy
+
+para mexer com excell
+pip install openpyxl
+
+para mexer com html
+pip install lxml
